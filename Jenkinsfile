@@ -7,7 +7,7 @@ pipeline {
 //cvv
   stages {
     //stage('Checkout')
-      stage('Clone code')
+      stage('Clonecode')
 
     {
       steps {
