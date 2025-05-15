@@ -1,12 +1,15 @@
 pipeline {
   agent any
 
-  tools {
-    nodejs 'NodeJS_22'
-  }
+  //tools {
+    //nodejs 'NodeJS_22'
+  //}
 //cvv
   stages {
-    stage('Checkout') {
+    //stage('Checkout')
+      stage('Clone')
+
+    {
       steps {
         git url: 'https://github.com/anithaganesan1/jenkins-angular-webhook.git', branch: 'master'
       }
