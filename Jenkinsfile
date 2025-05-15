@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs 'NodeJS_22'  // Make sure this is configured in Global Tool Configuration
+    nodejs 'NodeJS_22'
   }
 
   stages {
@@ -18,9 +18,18 @@ pipeline {
       }
     }
 
+    stage('Verify CLI') {
+      steps {
+        sh 'ls -la ./node_modules/.bin'
+        sh './node_modules/.bin/ng version || echo "ng CLI not found"'
+      }
+    }
+
     stage('Run Build') {
       steps {
-        sh 'ng build'
+        sh 'node -v'
+        sh 'npm -v'
+        sh './node_modules/.bin/ng build --configuration=production'
       }
     }
 
