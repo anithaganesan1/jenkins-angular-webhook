@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs 'NodeJS_22'  // Make sure this is configured in Global Tool Configuration
+    nodejs 'NodeJS_22'  //  Tool Configuration
   }
 
   stages {
