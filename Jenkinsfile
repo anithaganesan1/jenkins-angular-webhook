@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'master', url: 'https://github.com/anithaganesan1/jenkins-angular-webhook.git'
+        git url: 'https://github.com/anithaganesan1/jenkins-angular-webhook.git', branch: 'master'
       }
     }
 
