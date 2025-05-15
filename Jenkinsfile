@@ -7,8 +7,8 @@ pipeline {
 //cvv
   stages {
     //stage('Checkout')
-      stage('Clone')
-///jkjk
+      stage('Clone code')
+
     {
       steps {
         git url: 'https://github.com/anithaganesan1/jenkins-angular-webhook.git', branch: 'master'
