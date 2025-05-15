@@ -1,13 +1,12 @@
 pipeline {
   agent any
 
-  //tools {
-    //nodejs 'NodeJS_22'
-  //}
-//cvv
+  tools {
+    nodejs 'NodeJS_22'
+   }
+
   stages {
-    //stage('Checkout')
-      stage('Clonecodenew')
+    stage('Checkout')
 
     {
       steps {
