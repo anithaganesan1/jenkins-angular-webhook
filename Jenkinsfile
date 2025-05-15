@@ -2,11 +2,7 @@ pipeline {
   agent any
 
   tools {
-<<<<<<< HEAD
     nodejs 'NodeJS_22'
-=======
-    nodejs 'NodeJS_22'  //  Tool Configuration
->>>>>>> 6b6b7b4e8c6f53dd953484b011f7115055be1b9e
   }
 
   stages {
