@@ -2,12 +2,10 @@ pipeline {
   agent any
   tools {
     nodejs 'NodeJS_22'
-   }
-//
-  stages {
-    stage('Checkout')
+  }
 
-    {
+  stages {
+    stage('Checkout') {
       steps {
         git url: 'https://github.com/anithaganesan1/jenkins-angular-webhook.git', branch: 'master'
       }
@@ -43,14 +41,21 @@ pipeline {
 
   post {
     success {
-      mail to: 'aniganesan86@gmail.com',
-           subject: "SUCCESS: Angular Build #${env.BUILD_NUMBER}",
-           body: "The Angular project built successfully. Check Jenkins artifacts."
+      mail(
+        to: 'aniganesan86@gmail.com',
+        replyTo: 'keerthanavelusamy2001@gmail.com',
+        subject: "SUCCESS: Angular Build #${env.BUILD_NUMBER}",
+        body: "The Angular project built successfully. Check Jenkins artifacts."
+      )
     }
+
     failure {
-      mail to: 'aniganesan86@gmail.com',
-           subject: "FAILURE: Angular Build #${env.BUILD_NUMBER}",
-           body: "The Angular build failed. Please review Jenkins logs."
+      mail(
+        to: 'aniganesan86@gmail.com',
+        replyTo: 'keerthanavelusamy2001@gmail.com',
+        subject: "FAILURE: Angular Build #${env.BUILD_NUMBER}",
+        body: "The Angular build failed. Please review Jenkins logs."
+      )
     }
   }
 }
