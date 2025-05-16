@@ -40,24 +40,22 @@ pipeline {
   }
 
   post {
-  success {
-    emailext(
-      from: 'aniganesan86@gmail.com',
-      to: 'aniganesan86@gmail.com',
-      replyTo: 'keerthanavelusamy2001@gmail.com',
-      subject: "SUCCESS: Angular Build #${env.BUILD_NUMBER}",
-      body: "The Angular project built successfully. Check Jenkins artifacts."
-    )
-  }
+    success {
+      mail(
+        to: 'aniganesan86@gmail.com',
+        replyTo: 'keerthanavelusamy2001@gmail.com',
+        subject: "SUCCESS: Angular Build #${env.BUILD_NUMBER}",
+        body: "The Angular project built successfully. Check Jenkins artifacts."
+      )
+    }
 
-  failure {
-    emailext(
-      from: 'aniganesan86@gmail.com',
-      to: 'aniganesan86@gmail.com',
-      replyTo: 'keerthanavelusamy2001@gmail.com',
-      subject: "FAILURE: Angular Build #${env.BUILD_NUMBER}",
-      body: "The Angular build failed. Please review Jenkins logs."
-    )
+    failure {
+      mail(
+        to: 'aniganesan86@gmail.com',
+        replyTo: 'keerthanavelusamy2001@gmail.com',
+        subject: "FAILURE: Angular Build #${env.BUILD_NUMBER}",
+        body: "The Angular build failed. Please review Jenkins logs."
+      )
+    }
   }
-}
 }
