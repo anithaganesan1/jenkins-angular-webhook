@@ -5,7 +5,7 @@ pipeline {
    }
 
   stages {
-    stage('Checkoutss')
+    stage('Checkouts')
 
     {
       steps {
