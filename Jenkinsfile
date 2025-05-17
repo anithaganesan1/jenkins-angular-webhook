@@ -43,7 +43,8 @@ pipeline {
     success {
       mail(
         to: 'aniganesan86@gmail.com',
-        replyTo: 'keerthanavelusamy2001@gmail.com',
+        cc: 'keerthanavelusamy2001@gmail.com',
+        //replyTo: 'keerthanavelusamy2001@gmail.com',
         subject: "SUCCESS: Angular Build #${env.BUILD_NUMBER}",
         body: "The Angular project built successfully. Check Jenkins artifacts."
       )
@@ -52,7 +53,7 @@ pipeline {
     failure {
       mail(
         to: 'aniganesan86@gmail.com',
-        replyTo: 'keerthanavelusamy2001@gmail.com',
+        cc: 'keerthanavelusamy2001@gmail.com',
         subject: "FAILURE: Angular Build #${env.BUILD_NUMBER}",
         body: "The Angular build failed. Please review Jenkins logs."
       )
